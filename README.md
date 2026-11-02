@@ -3,6 +3,8 @@
 Mobile-first React UI for `../backend-ledger`, styled after the Google Pay UI kit.
 Built with React 19, Vite, Tailwind CSS 4, GSAP and three.js.
 
+**Live:** https://ledger-pay.pages.dev (Cloudflare Pages; the API is proxied to the backend on Render)
+
 ## Run
 
 ```bash
