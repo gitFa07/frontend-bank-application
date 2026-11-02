@@ -1,0 +1,7 @@
+// Cloudflare Pages config. `npm run deploy` builds with Vite and uploads dist/
+// together with functions/ (the /api proxy to the Render backend).
+{
+  "name": "ledger-pay",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2026-11-01"
+}

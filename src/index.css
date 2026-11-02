@@ -1,0 +1,170 @@
+@import "tailwindcss" source(".");
+
+/* Material 3 tokens taken from the Google Pay UI kit (light + dark pages). */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #f0f4f9;
+  --surface-2: #e9eef6;
+  --tonal: #d3e3fd;
+  --on-tonal: #041e49;
+  --primary: #0b57d0;
+  --on-primary: #ffffff;
+  --ink: #1f1f1f;
+  --muted: #444746;
+  --subtle: #747775;
+  --line: #e1e3e1;
+  --success: #146c2e;
+  --success-tonal: #c4eed0;
+  --danger: #b3261e;
+  --danger-tonal: #f9dedc;
+  --warn: #7c5800;
+  --warn-tonal: #ffefc9;
+  --banner-from: #c2e7ff;
+  --banner-to: #eef6ff;
+  --nav: #f0f4f9;
+  --scrim: rgb(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #131314;
+    --surface: #1e1f20;
+    --surface-2: #282a2c;
+    --tonal: #004a77;
+    --on-tonal: #c2e7ff;
+    --primary: #a8c7fa;
+    --on-primary: #062e6f;
+    --ink: #e3e3e3;
+    --muted: #c4c7c5;
+    --subtle: #8e918f;
+    --line: #444746;
+    --success: #6dd58c;
+    --success-tonal: #0f5223;
+    --danger: #f2b8b5;
+    --danger-tonal: #8c1d18;
+    --warn: #ffdf99;
+    --warn-tonal: #594400;
+    --banner-from: #0a3a5c;
+    --banner-to: #131314;
+    --nav: #1e1f20;
+    --scrim: rgb(0 0 0 / 0.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #131314;
+  --surface: #1e1f20;
+  --surface-2: #282a2c;
+  --tonal: #004a77;
+  --on-tonal: #c2e7ff;
+  --primary: #a8c7fa;
+  --on-primary: #062e6f;
+  --ink: #e3e3e3;
+  --muted: #c4c7c5;
+  --subtle: #8e918f;
+  --line: #444746;
+  --success: #6dd58c;
+  --success-tonal: #0f5223;
+  --danger: #f2b8b5;
+  --danger-tonal: #8c1d18;
+  --warn: #ffdf99;
+  --warn-tonal: #594400;
+  --banner-from: #0a3a5c;
+  --banner-to: #131314;
+  --nav: #1e1f20;
+  --scrim: rgb(0 0 0 / 0.6);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-tonal: var(--tonal);
+  --color-on-tonal: var(--on-tonal);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-success: var(--success);
+  --color-success-tonal: var(--success-tonal);
+  --color-danger: var(--danger);
+  --color-danger-tonal: var(--danger-tonal);
+  --color-warn: var(--warn);
+  --color-warn-tonal: var(--warn-tonal);
+  --color-nav: var(--nav);
+  --color-scrim: var(--scrim);
+  --font-sans: "Google Sans Text", "Google Sans", Roboto, system-ui, sans-serif;
+  --font-display: "Google Sans", "Google Sans Display", Roboto, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  overscroll-behavior-y: none;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.icon {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "opsz" 24;
+  user-select: none;
+}
+
+.icon-fill {
+  font-variation-settings: "FILL" 1, "opsz" 24;
+}
+
+.banner-gradient {
+  background: linear-gradient(180deg, var(--banner-from) 0%, var(--banner-to) 100%);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Shared focus ring: visible for keyboard users only. Inputs style their own focus. */
+:where(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
